@@ -11,7 +11,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      React homework template
+      goit-react-hw-04-hooks-feedback
     </div>
   );
 };
