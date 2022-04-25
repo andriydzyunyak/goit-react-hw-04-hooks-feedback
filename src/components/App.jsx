@@ -9,8 +9,7 @@ export const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const options = [];
-  options.push('good', 'neutral', 'bad');
+  const options = ['good', 'neutral', 'bad'];
 
   //Метод для сбора feedback по нажатию кнопки
   const handleFeedback = evt => {
@@ -32,12 +31,10 @@ export const App = () => {
     }
   };
 
-  // Метод для подсчета суммы feedback
-  const countTotalFeedback = () => {
-    return good + neutral + bad;
-  };
+  // Подсчет суммы feedback
+  const countTotalFeedback = () => good + neutral + bad;
 
-  //Метод для определения % positive feedback
+  //Определяет % positive feedback
   const countPositiveFeedbackPercentage = () => {
     return Math.round((good / countTotalFeedback()) * 100);
   };
@@ -45,10 +42,7 @@ export const App = () => {
   return (
     <>
       <Section title="Please leave feedback">
-        <FeedbackOptions
-          options={Object.values(options)}
-          onLeaveFeedback={handleFeedback}
-        />
+        <FeedbackOptions options={options} onLeaveFeedback={handleFeedback} />
       </Section>
       <Section title="Statistics">
         {countTotalFeedback() ? (
